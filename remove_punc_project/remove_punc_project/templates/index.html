@@ -59,7 +59,8 @@
     </button>
 </div>
 <div class="container">
-    <form action="/analyze" method="get">
+    <form action="/analyze/" method="POST">{% csrf_token %}
+
         <div class="form-group">
             <label for="exampleFormControlTextarea1">Welcome to text analyzer .Please Enter your text</label>
             <textarea class="form-control" name="text" id="exampleFormControlTextarea1" rows="5"></textarea>
@@ -74,6 +75,12 @@
             <input type="checkbox" name="fullcaps" class="custom-control-input" id="customCheck2">
             <label class="custom-control-label" for="customCheck2">Capitlized</label>
         </div>
+
+        <div class="custom-control custom-checkbox">
+            <input type="checkbox" name="newlineremover" class="custom-control-input" id="customCheck3">
+            <label class="custom-control-label" for="customCheck3">New Line Remover</label>
+        </div>
+
         <button type="submit" class="btn btn-dark mt-2">Analyze Text</button>
     </form>
 </div>
